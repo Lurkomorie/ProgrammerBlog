@@ -7,7 +7,7 @@ namespace ProgrammerBlog.Models
 {
     public class Post
     {
-    private int Id { get; }
+    public int PostId { get; set; }
     public string Title { get; set; }
     public string Body { get; set; }
     public bool Deleted { get; set; }

@@ -7,7 +7,7 @@ namespace ProgrammerBlog.Models
 {
     public class User
     {
-        private int Id { get; }
+        public int UserId { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }

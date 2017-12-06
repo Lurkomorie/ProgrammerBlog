@@ -17,7 +17,7 @@ namespace ProgrammerBlog.Models
         public virtual DbSet<Comment> Comments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Role>()
             .HasMany(e => e.Users)
             .WithMany(e => e.Roles)
             .Map(m => m.ToTable("UsersRoles").MapLeftKey("UserId").MapRightKey("RoleId"));
