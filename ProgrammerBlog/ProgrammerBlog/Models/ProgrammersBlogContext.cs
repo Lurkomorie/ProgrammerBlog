@@ -21,6 +21,9 @@ namespace ProgrammerBlog.Models
             .HasMany(e => e.Users)
             .WithMany(e => e.Roles)
             .Map(m => m.ToTable("UsersRoles").MapLeftKey("UserId").MapRightKey("RoleId"));
-        }
+
+            modelBuilder.Entity<Comment>()
+            .HasRequired<Post>(e => e.Post).WithMany(e => e.Comments).HasForeignKey(e => e.PostId);
+         }
     }
 }

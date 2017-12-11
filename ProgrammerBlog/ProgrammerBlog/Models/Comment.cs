@@ -12,5 +12,6 @@ namespace ProgrammerBlog.Models
         public string Body { get; set; }
         public bool Deleted { get; set; }
         public int PostId { get; set; }
+        public Post Post { get; set; }
     }
 }
