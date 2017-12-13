@@ -44,6 +44,46 @@
 
     </dl>
 </div>
+<fieldset>
+    <legend>Comments</legend>
+    <<table class="table">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Body
+        </th>
+        <th>
+            User
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Comments)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(item => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(item => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Body)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CommentId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CommentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CommentId })
+        </td>
+    </tr>
+    }
+
+</table>
+</fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }) |
     @Html.ActionLink("Back to List", "Index")
